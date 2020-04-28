@@ -1,0 +1,73 @@
+{
+  "name": "maisner/nette-app-sandbox",
+  "description": "",
+  "keywords": [
+    "nette",
+    "app",
+    "sandbox"
+  ],
+  "type": "project",
+  "license": [
+    "MIT"
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">= 7.4",
+    "nette/application": "^3.0",
+    "nette/bootstrap": "^3.0",
+    "nette/caching": "^3.0",
+    "nette/database": "^3.0",
+    "nette/di": "^3.0",
+    "nette/finder": "^2.5",
+    "nette/forms": "^3.0",
+    "nette/http": "^3.0",
+    "nette/mail": "^3.0",
+    "nette/robot-loader": "^3.0",
+    "nette/security": "^3.0",
+    "nette/utils": "^3.0",
+    "latte/latte": "^2.5",
+    "tracy/tracy": "^2.6",
+    "contributte/console": "^0.8.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.17",
+    "phpstan/phpstan-nette": "^0.12.6",
+    "phpstan/phpstan-strict-rules": "^0.12.2",
+    "slevomat/coding-standard": "^6.3",
+    "codeception/codeception": "^4.1",
+    "codeception/module-asserts": "^1.0.0",
+    "codeception/module-phpbrowser": "^1.0.0",
+    "codeception/module-rest": "^1.2"
+  },
+  "scripts": {
+    "console": "php bin/console",
+    "cache:purge": "rm -r temp/*/cache",
+    "codecept": "php vendor/bin/codecept",
+    "tests": "php vendor/bin/codecept run",
+    "tests:acceptance": "php vendor/bin/codecept run acceptance",
+    "tests:unit": "php vendor/bin/codecept run unit",
+    "tests:api": "php vendor/bin/codecept run api",
+    "phpstan": "php vendor/bin/phpstan analyse -l 8 -c phpstan.neon app",
+    "cs": "php vendor/squizlabs/php_codesniffer/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4  -sp app",
+    "cs:fix": "php vendor/squizlabs/php_codesniffer/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp app",
+    "build": [
+      "@cs",
+      "@phpstan",
+      "@tests"
+    ]
+  },
+  "autoload": {
+    "classmap": [
+      "app/Bootstrap.php"
+    ],
+    "psr-4": {
+      "Maisner\\App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Maisner\\App\\Tests\\": "tests/"
+    }
+  }
+}

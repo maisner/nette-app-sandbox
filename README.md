@@ -1,2 +1,3 @@
 # nette-app-sandbox
-Sandbox for Nette app
+### Installation
+`$ ./install.sh`
