@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 echo ---------------------------
 echo Install script
 echo ---------------------------
