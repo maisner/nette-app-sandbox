@@ -3,6 +3,6 @@ echo ---------------------------
 echo Install script
 echo ---------------------------
 
-composer install
+#composer install
 rm -rf ./.docker/mysql/data
 chmod -R 777 temp log
