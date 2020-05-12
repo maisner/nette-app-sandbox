@@ -56,7 +56,7 @@
       "@phpstan",
       "@tests"
     ],
-    "post-install-cmd": [
+    "post-create-project-cmd": [
       "./install.sh"
     ]
   },
