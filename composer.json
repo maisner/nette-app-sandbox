@@ -55,6 +55,9 @@
       "@cs",
       "@phpstan",
       "@tests"
+    ],
+    "post-install-cmd": [
+      "./install.sh"
     ]
   },
   "autoload": {
